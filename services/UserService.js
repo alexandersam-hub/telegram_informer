@@ -28,7 +28,9 @@ class UserService{
     async getAdminUsers(){
         try{
             const users = await UserModel.find({role:'admin'})
-            return users
+            if(users)
+                return users
+            return []
         }catch (e) {
             return false
         }

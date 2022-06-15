@@ -13,7 +13,6 @@ const start = async ()=>{
     try{
         await mongoose.connect(process.env.DB_URL)
         TelegramService.startListenMessage()
-
         app.listen(PORT,()=>{
             console.log(`start on port ${PORT}`)
         })
