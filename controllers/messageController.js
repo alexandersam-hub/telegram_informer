@@ -4,6 +4,7 @@ class MessageController{
     async getMessage(req,res){
         try {
             const {data} = req.body
+            console.log('message '+data)
             const result = await telegramService.sendTelegramMessageAdmin(data)
             return res.json(result)
         }catch (e) {
