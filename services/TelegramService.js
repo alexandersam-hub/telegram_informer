@@ -10,8 +10,9 @@ class TelegramService{
             for(let user of users){
                 await bot.sendMessage(user.chatId, data);
             }
+            return {warning:false}
         }catch (e) {
-            console.log(e)
+            return {warning:true, message:'Ошибка отправки сообщения '+e}
         }
 
     }
